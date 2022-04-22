@@ -1,15 +1,15 @@
 import "./index.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MonetizationOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
+import FolderIcon from "@mui/icons-material/Folder";
+import BugReportIcon from "@mui/icons-material/BugReport";
+import NewReleasesIcon from "@mui/icons-material/NewReleases";
 
 const Widget = ({ type }) => {
   let data;
 
   // temp
-  const amount = 100;
+  const amount = 27;
   const diff = 50;
 
   switch (type) {
@@ -17,7 +17,7 @@ const Widget = ({ type }) => {
       data = {
         title: "USERS",
         isMoney: false,
-        link: "See all users",
+        link: "View all users",
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -29,13 +29,13 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "order":
+    case "project":
       data = {
-        title: "ORDERS",
+        title: "PROJECTS",
         isMoney: false,
-        link: "View all orders",
+        link: "View all projects",
         icon: (
-          <ShoppingCartOutlinedIcon
+          <FolderIcon
             className="icon"
             style={{
               backgroundColor: "rgba(218, 216, 115, 0.5)",
@@ -45,13 +45,13 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "earning":
+    case "ticket":
       data = {
-        title: "EARNING",
-        isMoney: true,
-        link: "View net earnings",
+        title: "TICKETS",
+        isMoney: false,
+        link: "View all tickets",
         icon: (
-          <MonetizationOutlinedIcon
+          <BugReportIcon
             className="icon"
             style={{
               backgroundColor: "rgba(87, 178, 104, 0.5)",
@@ -61,13 +61,13 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "balance":
+    case "release":
       data = {
-        title: "BALANCE",
+        title: "RELEASES",
         isMoney: false,
-        link: "See details",
+        link: "View all releases",
         icon: (
-          <AccountBalanceWalletOutlinedIcon
+          <NewReleasesIcon
             className="icon"
             style={{
               backgroundColor: "rgba(48, 153, 117, 0.5)",
@@ -80,21 +80,20 @@ const Widget = ({ type }) => {
     default:
       break;
   }
-  console.log(data);
 
   return (
     <div className="widget">
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          {data.isMoney && "$"} {Math.round(Math.random() * amount)}
         </span>
         <span className="link">{data.link}</span>
       </div>
       <div className="right">
         <div className="percentage positive">
           <KeyboardArrowUpIcon />
-          {diff} %
+          {Math.round(Math.random() * diff)} %
         </div>
         {data.icon}
       </div>
