@@ -72,18 +72,17 @@
         padding: 10px;
       }
     }
-  }
+    .bottom {
+      -webkit-box-shadow: 5px 5px 15px 2px rgba(0, 0, 0.5);
+      box-shadow: 5px 5px 15px 2px rgba(200, 200, 200, 0.5);
+      padding: 20px;
+      margin: 10px 20px;
+    }
 
-  .single-bottom {
-    -webkit-box-shadow: 5px 5px 15px 2px rgba(0, 0, 0.5);
-    box-shadow: 5px 5px 15px 2px rgba(200, 200, 200, 0.5);
-    padding: 20px;
-    margin: 10px;
-  }
-
-  .title {
-    font-size: 125%;
-    color: lightgray;
-    margin-bottom: 20px;
+    .title {
+      font-size: 125%;
+      color: lightgray;
+      margin-bottom: 20px;
+    }
   }
 }

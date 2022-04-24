@@ -50,7 +50,7 @@ const Single = () => {
             />
           </div>
         </div>
-        <div className="single-bottom">
+        <div className="bottom">
           <h1 className="title">Last Contributions</h1>
           <List />
         </div>

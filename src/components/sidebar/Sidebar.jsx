@@ -10,36 +10,45 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">
-          <img src={SvgLogo} alt="ANTS" />
-        </span>
+        <Link to="/">
+          <span className="logo">
+            <img src={SvgLogo} alt="ANTS" />
+          </span>
+        </Link>
       </div>
       <hr />
       <div className="center">
         <ul>
           <p className="title">Main</p>
-          <li>
-            <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <li>
+              <DashboardIcon className="icon" />
+              <span>Dashboard</span>
+            </li>
+          </Link>
           <p className="title">Interface</p>
-          <li>
-            <GroupIcon className="icon" />
-            <span>Users</span>
-          </li>
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <GroupIcon className="icon" />
+              <span>Users</span>
+            </li>
+          </Link>
           <li>
             <FolderIcon className="icon" />
             <span>Projects</span>
           </li>
-          <li>
-            <BugReportIcon className="icon" />
-            <span>Tickets</span>
-          </li>
+          <Link to="/tickets" style={{ textDecoration: "none" }}>
+            <li>
+              <BugReportIcon className="icon" />
+              <span>Tickets</span>
+            </li>
+          </Link>
           <p className="title">Service</p>
           <li>
             <NotificationsIcon className="icon" />
