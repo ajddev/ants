@@ -6,6 +6,8 @@ import { useState } from "react";
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   return (
     <div className="new">
@@ -42,7 +44,11 @@ const New = ({ inputs, title }) => {
               {inputs.map((input) => (
                 <div className="form-input" key={input.id}>
                   <label>{input.label}</label>
-                  <input type={input.type} placeholder={input.placeholder} />
+                  <input
+                    type={input.type}
+                    placeholder={input.placeholder}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
                 </div>
               ))}
               <button>Send</button>
